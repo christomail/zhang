@@ -1,0 +1,32 @@
+2016/07/12 15:36:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in E:\zhang\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\zhang\framework\web\CWebApplication.php(141): CWebApplication->runController('gii')
+#1 E:\zhang\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 E:\zhang\home\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=gii
+---
+2016/07/12 17:26:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in E:\zhang\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\zhang\framework\web\CWebApplication.php(141): CWebApplication->runController('gii')
+#1 E:\zhang\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 E:\zhang\home\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=gii
+---
+2016/07/12 17:27:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/login/login".' in E:\zhang\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\zhang\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/login/log...')
+#1 E:\zhang\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 E:\zhang\home\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=admin/login/login
+---
+2016/07/12 17:27:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin".' in E:\zhang\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\zhang\framework\web\CWebApplication.php(141): CWebApplication->runController('admin')
+#1 E:\zhang\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 E:\zhang\home\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=admin
+---
