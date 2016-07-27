@@ -8,7 +8,7 @@
   </script>
 <div class="right-nav">
 	<ul>
-		<li><img src="<?php echo Yii::app()->request->baseUrl;?>public/images/admin/home.png"></li>
+		<li><img src="<?php echo Yii::app()->request->baseUrl;?>/images/home.png"></li>
 		<li style="margin-left:25px;">您当前的位置：</li>
 		<li><a href="#">商品模块</a></li>
 		<li>></li>
@@ -78,7 +78,7 @@
 						'id'=>'content_body',//页面中输入框（或其他初始化容器）的ID
 						'name'=>'body',//指定ueditor实例的名称,个页面有多个ueditor实例时使用
 						'config'=> array(
-							'serverUrl'=>Yii::app()->createUrl('admin/editor/index'),
+							'serverUrl'=>Yii::app()->createUrl('/editor/index'),
 							'initialFrameHeight'=>'300',
 							'initialFrameWidth'=>'700',
 						)

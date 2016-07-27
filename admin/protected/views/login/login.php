@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Login Form</title>
 
-<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl;?>/public/css/admin/normalize.css">
+<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl;?>/css/normalize.css">
 
 </head>
 

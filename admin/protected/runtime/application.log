@@ -870,3 +870,109 @@ Stack trace:
 REQUEST_URI=/index.php/admin/editor/index?action=config&&noCache=1468577021486
 HTTP_REFERER=http://zhangyi.admin.moxi.com/index.php/goods/add
 ---
+2016/07/27 16:49:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in E:\zhang\framework\web\CController.php:483
+Stack trace:
+#0 E:\zhang\framework\web\CController.php(270): CController->missingAction('')
+#1 E:\zhang\framework\web\CWebApplication.php(282): CController->run('')
+#2 E:\zhang\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
+#3 E:\zhang\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 E:\zhang\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/login
+---
+2016/07/27 16:53:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "public".' in E:\zhang\framework\web\CController.php:483
+Stack trace:
+#0 E:\zhang\framework\web\CController.php(270): CController->missingAction('public')
+#1 E:\zhang\framework\web\CWebApplication.php(282): CController->run('public')
+#2 E:\zhang\framework\web\CWebApplication.php(141): CWebApplication->runController('Goods/public/im...')
+#3 E:\zhang\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 E:\zhang\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/Goods/public/images/admin/home.png
+HTTP_REFERER=http://zhangyi.admin.moxi.com/index.php/Goods/lst
+---
+2016/07/27 16:53:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Category/lst".' in E:\zhang\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\zhang\framework\web\CWebApplication.php(141): CWebApplication->runController('Category/lst')
+#1 E:\zhang\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 E:\zhang\admin\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/Category/lst
+HTTP_REFERER=http://zhangyi.admin.moxi.com/index.php/Goods/lst
+---
+2016/07/27 16:53:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "public".' in E:\zhang\framework\web\CController.php:483
+Stack trace:
+#0 E:\zhang\framework\web\CController.php(270): CController->missingAction('public')
+#1 E:\zhang\framework\web\CWebApplication.php(282): CController->run('public')
+#2 E:\zhang\framework\web\CWebApplication.php(141): CWebApplication->runController('Goods/public/im...')
+#3 E:\zhang\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 E:\zhang\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/Goods/public/images/admin/home.png
+HTTP_REFERER=http://zhangyi.admin.moxi.com/index.php/Goods/lst
+---
+2016/07/27 16:54:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "public".' in E:\zhang\framework\web\CController.php:483
+Stack trace:
+#0 E:\zhang\framework\web\CController.php(270): CController->missingAction('public')
+#1 E:\zhang\framework\web\CWebApplication.php(282): CController->run('public')
+#2 E:\zhang\framework\web\CWebApplication.php(141): CWebApplication->runController('goods/public/im...')
+#3 E:\zhang\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 E:\zhang\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/goods/public/images/admin/home.png
+HTTP_REFERER=http://zhangyi.admin.moxi.com/index.php/goods/add
+---
+2016/07/27 16:54:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "public".' in E:\zhang\framework\web\CController.php:483
+Stack trace:
+#0 E:\zhang\framework\web\CController.php(270): CController->missingAction('public')
+#1 E:\zhang\framework\web\CWebApplication.php(282): CController->run('public')
+#2 E:\zhang\framework\web\CWebApplication.php(141): CWebApplication->runController('goods/public/im...')
+#3 E:\zhang\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 E:\zhang\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/goods/public/images/admin/home.png
+HTTP_REFERER=http://zhangyi.admin.moxi.com/index.php/goods/add
+---
+2016/07/27 16:54:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/editor/index".' in E:\zhang\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\zhang\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/editor/in...')
+#1 E:\zhang\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 E:\zhang\admin\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/admin/editor/index?action=config&&noCache=1469609667250
+HTTP_REFERER=http://zhangyi.admin.moxi.com/index.php/goods/add
+---
+2016/07/27 16:54:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/editor/index".' in E:\zhang\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\zhang\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/editor/in...')
+#1 E:\zhang\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 E:\zhang\admin\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/admin/editor/index?action=config&&noCache=1469609690526
+HTTP_REFERER=http://zhangyi.admin.moxi.com/index.php/goods/add
+---
+2016/07/27 16:57:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/editor/index".' in E:\zhang\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\zhang\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/editor/in...')
+#1 E:\zhang\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 E:\zhang\admin\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/admin/editor/index?action=config&&noCache=1469609846103
+HTTP_REFERER=http://zhangyi.admin.moxi.com/index.php/goods/add
+---
+2016/07/27 17:12:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/editor/index".' in E:\zhang\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\zhang\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/editor/in...')
+#1 E:\zhang\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 E:\zhang\admin\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/admin/editor/index?action=config&&noCache=1469609846103
+---
+2016/07/27 17:18:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/editor/index".' in E:\zhang\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\zhang\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/editor/in...')
+#1 E:\zhang\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 E:\zhang\admin\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/admin/editor/index?action=config&&noCache=1469609846103
+---
