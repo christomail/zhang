@@ -42,11 +42,12 @@ return array(
 
 		'urlManager'=>array(
 			'urlFormat'=>'path',
+			'showScriptName' => false,//hide index.php
 			'rules'=>array(
 				'/'=>'index/index',
-				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
-				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
-				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+//				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
+//				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
+//				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
 
@@ -77,11 +78,11 @@ return array(
 		'controllerMap'=>array(
 			'ueditor'=>array(
 				'class'=>'ext.ueditor.UeditorController',
-				'config'=>array(),//²Î¿¼config.jsonµÄÅäÖÃ£¬´Ë´¦µÄÅäÖÃ¾ß±¸×î¸ßÓÅÏÈ¼¶
-				'useQiniu'=>false,//ÊÇ·ñÊ¹ÓÃÆßÅ£´æ´¢
-				'thumbnail'=>false,//ÊÇ·ñ¿ªÆôËõÂÔÍ¼
-				'watermark'=>'',//Ë®Ó¡Í¼Æ¬µÄµØÖ·£¬Ê¹ÓÃÏà¶ÔÂ·¾¶
-				'locate'=>9,//Ë®Ó¡Î»ÖÃ£¬1-9£¬Ä¬ÈÏÎª9ÔÚÓÒÏÂ½Ç
+				'config'=>array(),//ï¿½Î¿ï¿½config.jsonï¿½ï¿½ï¿½ï¿½ï¿½Ã£ï¿½ï¿½Ë´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¾ß±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¼ï¿½
+				'useQiniu'=>false,//ï¿½Ç·ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½Å£ï¿½æ´¢
+				'thumbnail'=>false,//ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼
+				'watermark'=>'',//Ë®Ó¡Í¼Æ¬ï¿½Äµï¿½Ö·ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½
+				'locate'=>9,//Ë®Ó¡Î»ï¿½Ã£ï¿½1-9ï¿½ï¿½Ä¬ï¿½ï¿½Îª9ï¿½ï¿½ï¿½ï¿½ï¿½Â½ï¿½
 			),
 		),
 

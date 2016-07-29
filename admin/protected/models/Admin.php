@@ -2,7 +2,7 @@
 /**
 * 后台用户模型
 */
-class AdminForm extends CActiveRecord
+class Admin extends CActiveRecord
 {
 	/**
 	 * 必不可缺的方法1：返回模型
@@ -31,6 +31,15 @@ class AdminForm extends CActiveRecord
 		foreach($pri as $k=>$v){
 			$priData = $v['pri_name'];
 		}
+	}
+	public function get_by_loginname($loginname)
+	{
+		$command = Yii::app()->db->createCommand()
+			->select('*')
+			->from('think_admin')
+			->where('username=:loginname');
+		$command->bindParam(':loginname',$loginname);
+		return $command->queryRow();
 	}
 }
 

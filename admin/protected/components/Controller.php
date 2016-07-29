@@ -16,6 +16,23 @@ class Controller extends CController
 	public $menu=array();
 	public function init(){
 		$this->menu = $this->get_menu();
+		$this->load_userinfo();
+	}
+	public function load_userinfo(){
+		if(isset($_COOKIE['user'])) {
+			$loginname = $_COOKIE['user'];
+			$userinfo = Admin::model()->get_by_loginname($loginname);
+			if (empty($userinfo)) {
+				$loginUrl = 'http://' . $_SERVER['SERVER_NAME'] . '/login/login';
+				header('Location:' . $loginUrl);
+				exit;
+			}
+		}else{
+			$loginUrl = 'http://' . $_SERVER['SERVER_NAME'] . '/login/login';
+			header('Location:' . $loginUrl);
+			exit;
+		}
+
 	}
 	//获取目录列表
 	public function get_menu()
@@ -43,6 +60,32 @@ class Controller extends CController
 		}
 		// print_r($result);exit;
 		return $result;
+	}
+	//获取get,post参数
+	public function getParam($name, $defaultValue = null) {
+		$returnVal = Yii::app()->request->getParam($name,$defaultValue);
+		$returnVal = $this->new_addslashes($returnVal);
+		return $returnVal;
+	}
+
+	public function new_addslashes($string)
+	{
+		if(is_array($string))
+		{
+			foreach($string as $key=>$val)
+			{
+				$string[$key]=$this->new_addslashes($val);
+			}
+		}
+		else
+		{
+			if( !get_magic_quotes_gpc() )
+			{
+				$string = addslashes($string);
+			}
+			$string=htmlspecialchars($string);
+		}
+		return $string;
 	}
 	/**
 	 * @var array the breadcrumbs of the current page. The value of this property will

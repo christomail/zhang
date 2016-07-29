@@ -13,14 +13,25 @@ class GoodsController extends Controller
         parent::init();
         $this->goodsModel = GoodsForm::model();
     }
-    // public $layout='application.modules.admin.views.layouts.main';
     public function actionAdd(){
-//        $goodsModel = new GoodsForm();
-//        $goods = $goodsModel->get_all();
-//$goods = $goodsModel->search();
-//        echo "<pre/>";
-//        print_r($goods);
-        $this->render('add');
+        if($_REQUEST){
+            $this->getParam('goods_name');
+            $this->getParam('title');
+            $this->getParam('tag');
+            $this->getParam('cat_id');
+            $this->getParam('sort_num');
+            $this->getParam('price');
+            $this->getParam('starttime');
+            $this->getParam('endtime');
+            $this->getParam('is_on_sale');
+            $this->getParam('is_hot');
+            $this->getParam('keywords');
+            $this->getParam('content');
+            $this->getParam('');
+
+        }else{
+            $this->render('add');
+        }
     }
     public function actionLst(){
         $list = $this->goodsModel->get_all();

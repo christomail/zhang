@@ -2,9 +2,9 @@
 	<ul>
 		<li><img src="<?php echo Yii::app()->request->baseUrl;?>/images/home.png"></li>
 		<li style="margin-left:25px;">您当前的位置：</li>
-		<li><a href="#">商品模块</a></li>
+		<li><a href="javascript:;">商品模块</a></li>
 		<li>></li>
-		<li><a href="#">商品列表</a></li>
+		<li><a href="javascript:;">商品列表</a></li>
 	</ul>
 	<a href="<?php echo $this->createUrl('add');?>"><div class="add"><h3>添加商品</h3></div></a>
 </div>
@@ -31,7 +31,7 @@
 			<td><?php echo $v['is_on_sale'];?></td>
 			<td><?php echo $v['is_hot'];?></td>
 			<td><?php echo $v['createtime'];?></td>
-			<td><a href="<?php echo $this->createUrl('Goods/edit');?>"><img src="/images/edit.png" alt="edit"></a>
+			<td><a href="<?php echo $this->createUrl('Goods/edit',array('id'=>$v['id']));?>"><img src="/images/edit.png" alt="edit"></a>
 				| <a href="<?php echo $this->createUrl('Goods/delete');?>"><img src="/images/delete.ico" alt="delete"></a></td>
 		</tr>
 		<?php } ?>

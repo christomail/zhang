@@ -6,14 +6,16 @@
  * Date: 2016/3/16
  * Time: 18:00
  */
-class LoginController extends Controller
+class LoginController extends CController
 {
     public $layout='application.modules.admin.views.layouts.login';
     public function actionLogin(){
     	$loginForm = new LoginForm();
     		if(isset($_POST['LoginForm'])){
     			$loginForm->attributes = $_POST['LoginForm'];
+//				var_dump($loginForm->attributes);exit;
     			 if($loginForm->validate() && $loginForm->login()){
+					 setcookie('user',$loginForm->attributes['username'],time()+3600,'/','moxi.com');
 					 $this->redirect(array('Index/index'));
     			 }
     		}
@@ -34,7 +36,9 @@ class LoginController extends Controller
     		);
     }
 	public function actionOut(){
-		Yii::app()->user->logout();
-		$this->redirect(array('login'));
+		if(setcookie('user','',time()-1,'/','moxi.com')){
+			Yii::app()->user->logout();
+			$this->redirect(array('login'));
+		}
 	}
 }

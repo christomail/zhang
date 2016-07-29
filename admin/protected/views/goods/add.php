@@ -10,9 +10,9 @@
 	<ul>
 		<li><img src="<?php echo Yii::app()->request->baseUrl;?>/images/home.png"></li>
 		<li style="margin-left:25px;">您当前的位置：</li>
-		<li><a href="#">商品模块</a></li>
+		<li><a href="javascript:;">商品模块</a></li>
 		<li>></li>
-		<li><a href="#">商品列表</a></li>
+		<li><a href="javascript:;">添加商品</a></li>
 	</ul>
 	<a href="<?php echo $this->createUrl('lst');?>"><div class="return"><h3>返回商品列表</h3></div></a>
 </div>
@@ -32,8 +32,18 @@
 			<td><input type="text" name="tag" class="input-text"></td>
 		</tr>
 		<tr>
+			<th>Logo：</th>
+			<td><input type="file" name="logo" class="input-text"></td>
+		</tr>
+		<tr>
 			<th>产品分类：</th>
-			<td><select name="cat_id" id=""></select></td>
+			<td>
+				<select name="cat_id" id="">
+					<option value="1">分类1</option>
+					<option value="2">分类2</option>
+					<option value="3">分类3</option>
+				</select>
+			</td>
 		</tr>
 		<tr>
 			<th>排序值：</th>
@@ -75,7 +85,7 @@
 				<?php
 				$this->widget('ext.ueditor.UeditorWidget',
 					array(
-						'id'=>'content_body',//页面中输入框（或其他初始化容器）的ID
+						'id'=>'content',//页面中输入框（或其他初始化容器）的ID
 						'name'=>'body',//指定ueditor实例的名称,个页面有多个ueditor实例时使用
 						'config'=> array(
 							'serverUrl'=>Yii::app()->createUrl('/editor/index'),
