@@ -1,11 +1,21 @@
 <link rel="stylesheet" href="/public/datepicker/css/jquery-ui.css">
-  <script src="/public/datepicker/js/jquery-1.11.3.min.js"></script>
-  <script src="/public/datepicker/js/jquery-ui.js"></script>
-  <script type="text/javascript">
-  	$(function() {
-    $( ".datepicker" ).datepicker();
-  });
-  </script>
+<script src="/public/datepicker/js/jquery-1.11.3.min.js"></script>
+<script src="/public/datepicker/js/jquery-ui.js"></script>
+<script type="text/javascript">
+$(function() {
+$( ".datepicker" ).datepicker();
+});
+</script>
+<style type="text/css">
+	.sub input {
+		width: 80px;
+		height:30px;
+		font-family: 微软雅黑;
+		font-size: larger;
+		background-color: #6ce26c;
+		margin: 5px 20px;
+	}
+</style>
 <div class="right-nav">
 	<ul>
 		<li><img src="<?php echo Yii::app()->request->baseUrl;?>/images/home.png"></li>
@@ -14,10 +24,10 @@
 		<li>></li>
 		<li><a href="javascript:;">添加商品</a></li>
 	</ul>
-	<a href="<?php echo $this->createUrl('lst');?>"><div class="return"><h3>返回商品列表</h3></div></a>
+	<a href="<?php echo $this->createUrl('/goods/lst');?>"><div class="return"><h3>返回列表</h3></div></a>
 </div>
 <div class="pd-20">
-	<form action="" method="post" class="form form-horizontal" id="form-article-add" target="_self">
+	<form action="/goods/add" method="post" class="form form-horizontal" id="form-article-add" target="_self">
 	<table class="tab_goods">
 		<tr>
 			<th>产品标题：</th>
@@ -30,10 +40,6 @@
 		<tr>
 			<th>标签：</th>
 			<td><input type="text" name="tag" class="input-text"></td>
-		</tr>
-		<tr>
-			<th>Logo：</th>
-			<td><input type="file" name="logo" class="input-text"></td>
 		</tr>
 		<tr>
 			<th>产品分类：</th>
@@ -85,8 +91,8 @@
 				<?php
 				$this->widget('ext.ueditor.UeditorWidget',
 					array(
-						'id'=>'content',//页面中输入框（或其他初始化容器）的ID
-						'name'=>'body',//指定ueditor实例的名称,个页面有多个ueditor实例时使用
+						'id'=>'content_id',//页面中输入框（或其他初始化容器）的ID
+						'name'=>'describle',//指定ueditor实例的名称,个页面有多个ueditor实例时使用
 						'config'=> array(
 							'serverUrl'=>Yii::app()->createUrl('/editor/index'),
 							'initialFrameHeight'=>'300',
@@ -96,12 +102,14 @@
 				);?>
 			</td>
 		</tr>
+		<tr class="sub">
+			<td colspan="2">
+				<center><input type="button" value="提交" onclick="$('#form-article-add').submit();"> | <input type="button" value="取消" onclick="window.location.href='/goods/lst'"></center>
+			</td>
+		</tr>
 	</table>
 	</form>
 </div>
-
-<!--<iframe style="display:none;" width="800" height="500" id="_ajax_upload_pic" name="_ajax_upload_pic"></iframe>-->
-
 <script type="text/javascript">
 	function form_submit()
 	{

@@ -6,68 +6,83 @@
         $( ".datepicker" ).datepicker();
     });
 </script>
+<style type="text/css">
+    .sub input {
+        width: 80px;
+        height:30px;
+        font-family: 微软雅黑;
+        font-size: larger;
+        background-color: #6ce26c;
+        margin: 5px 20px;
+    }
+</style>
 <div class="right-nav">
     <ul>
         <li><img src="<?php echo Yii::app()->request->baseUrl;?>/images/home.png"></li>
         <li style="margin-left:25px;">您当前的位置：</li>
-        <li><a href="javascript:void (0);">商品模块</a></li>
+        <li><a href="javascript:;">商品模块</a></li>
         <li>></li>
-        <li><a href="javascript:;">编辑商品</a></li>
+        <li><a href="javascript:;">添加商品</a></li>
     </ul>
-    <a href="<?php echo $this->createUrl('lst');?>"><div class="return"><h3>返回商品列表</h3></div></a>
+    <a href="<?php echo $this->createUrl('/goods/lst');?>"><div class="return"><h3>返回列表</h3></div></a>
 </div>
 <div class="pd-20">
-    <form action="" method="post" class="form form-horizontal" id="form-article-add" target="_self">
+    <form action="/goods/edit" method="post" class="form form-horizontal" id="form-article-add" target="_self">
+        <input type="hidden" name="id" value="<?php echo $list['id'];?>">
         <table class="tab_goods">
             <tr>
                 <th>产品标题：</th>
-                <td><input type="text" name="goods_name" class="input-text"></td>
+                <td><input type="text" name="goods_name" class="input-text" value="<?php echo $list['goods_name'];?>"></td>
             </tr>
             <tr>
                 <th>简略标题：</th>
-                <td><input type="text" name="title" class="input-text"></td>
+                <td><input type="text" name="title" class="input-text" value="<?php echo $list['title'];?>"></td>
             </tr>
             <tr>
                 <th>标签：</th>
-                <td><input type="text" name="tag" class="input-text"></td>
+                <td><input type="text" name="tag" class="input-text" value="<?php echo $list['tag'];?>"></td>
             </tr>
             <tr>
                 <th>产品分类：</th>
-                <td><select name="cat_id" id=""></select></td>
+                <td>
+                    <select name="cat_id" id="">
+                        <option value="1">分类1</option>
+                    </select>
+                </td>
             </tr>
             <tr>
                 <th>排序值：</th>
-                <td><input type="text" name="sort_num" class="input-text"></td>
+                <td><input type="text" name="sort_num" class="input-text" value="<?php echo $list['sort_num'];?>"></td>
             </tr>
             <tr>
                 <th>价格：</th>
-                <td><input type="text" name="price" class="input-text">元</td>
+                <td><input type="text" name="price" class="input-text" value="<?php echo $list['price'];?>">元</td>
             </tr>
             <tr>
                 <th>销售开始时间：</th>
-                <td><input type="text" class="datepicker" name="starttime" id="dpd1"></td>
+                <td><input type="text" class="datepicker" name="starttime" id="dpd1" value="<?php echo $list['starttime'];?>"></td>
             </tr>
             <tr>
                 <th>销售结束时间：</th>
-                <td><input type="text" class="datepicker" name="endtime" id="dpd2"></td>
+                <td><input type="text" class="datepicker" name="endtime" id="dpd2" value="<?php echo $list['endtime'];?>"></td>
             </tr>
             <tr>
                 <th>是否促销：</th>
                 <td>
-                    <input type="radio" name="is_on_sale" value="是" checked="checked"/>是
-                    <input type="radio" name="is_on_sale" value="否"/>否
+                    <input type="radio" name="is_on_sale" value="是" <?php if($list['is_on_sale']=="是") echo "checked='checked'";?>/>是
+                    <input type="radio" name="is_on_sale" value="否" <?php if($list['is_on_sale']=="否") echo "checked='checked'";?>/>否
                 </td>
             </tr>
             <tr>
                 <th>是否热销：</th>
                 <td>
-                    <input type="radio" name="is_hot" value="是" checked="checked"/>是
-                    <input type="radio" name="is_hot" value="否"/>否
+                    <input type="radio" name="is_hot" value="是" <?php if($list['is_hot']=="是") echo "checked='checked'";?>/>是
+                    <input type="radio" name="is_hot" value="否" <?php if($list['is_hot']=="否") echo "checked='checked'";?>/>否
                 </td>
             </tr>
             <tr>
                 <th>关键字：</th>
-                <td><input type="text" class="input_text" name="keywords"></td>
+                <td><input type="text" class="input_text" name="keywords" value="<?php echo $list['keywords'];?>"></td>
             </tr>
             <tr>
                 <th>详细内容：</th>
@@ -75,8 +90,9 @@
                     <?php
                     $this->widget('ext.ueditor.UeditorWidget',
                         array(
-                            'id'=>'content_body',//页面中输入框（或其他初始化容器）的ID
-                            'name'=>'body',//指定ueditor实例的名称,个页面有多个ueditor实例时使用
+                            'id'=>'content_id',//页面中输入框（或其他初始化容器）的ID
+                            'name'=>'describle',//指定ueditor实例的名称,个页面有多个ueditor实例时使用
+                            'value' => $list['describle'],
                             'config'=> array(
                                 'serverUrl'=>Yii::app()->createUrl('/editor/index'),
                                 'initialFrameHeight'=>'300',
@@ -86,12 +102,14 @@
                     );?>
                 </td>
             </tr>
+            <tr class="sub">
+                <td colspan="2">
+                    <center><input type="button" value="提交" onclick="$('#form-article-add').submit();"> | <input type="button" value="取消" onclick="window.location.href='/goods/lst'"></center>
+                </td>
+            </tr>
         </table>
     </form>
 </div>
-
-<!--<iframe style="display:none;" width="800" height="500" id="_ajax_upload_pic" name="_ajax_upload_pic"></iframe>-->
-
 <script type="text/javascript">
     function form_submit()
     {

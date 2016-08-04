@@ -14,25 +14,27 @@
 			<td>商品ID</td>
 			<td>商品名称</td>
 			<td>标签</td>
-			<td>缩略图</td>
+			<td>价格（元）</td>
 			<td>关键词</td>
 			<td>是否上架</td>
 			<td>是否促销</td>
 			<td>添加时间</td>
-			<td>编辑|删除</td>
+			<td>操作</td>
 		</tr>
 		<?php foreach($list as $v){ ?>
 		<tr>
 			<td><?php echo $v['id'];?></td>
 			<td><?php echo $v['goods_name'];?></td>
 			<td><?php echo $v['tag'];?></td>
-			<td><?php echo $v['sm_pic'];?></td>
+			<td><?php echo $v['price'];?></td>
 			<td><?php echo $v['keywords'];?></td>
 			<td><?php echo $v['is_on_sale'];?></td>
 			<td><?php echo $v['is_hot'];?></td>
 			<td><?php echo $v['createtime'];?></td>
-			<td><a href="<?php echo $this->createUrl('Goods/edit',array('id'=>$v['id']));?>"><img src="/images/edit.png" alt="edit"></a>
-				| <a href="<?php echo $this->createUrl('Goods/delete');?>"><img src="/images/delete.ico" alt="delete"></a></td>
+			<td>
+				<a href="<?php echo $this->createUrl('Pic/lst',array('id'=>$v['id']));?>">查看图片</a>
+				| <a href="<?php echo $this->createUrl('Goods/edit',array('id'=>$v['id']));?>">编辑</a>
+				| <a href="<?php echo $this->createUrl('Goods/delete',array('id'=>$v['id']));?>">删除</a></td>
 		</tr>
 		<?php } ?>
 	</table>

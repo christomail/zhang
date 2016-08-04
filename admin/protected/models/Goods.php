@@ -148,4 +148,33 @@ class Goods extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	public function get_all(){
+		$sql = 'SELECT * FROM think_goods where is_on=1';
+		return Yii::app()->db->createCommand($sql)->queryAll();
+	}
+	public function addGoods($arr){
+		$goods = new self();
+		foreach($arr as $k=>$v){
+			$goods->$k = $v;
+		}
+		return $goods->insert();
+	}
+	public function getById($id){
+		$res = $this->findByPk($id);
+		return $res->attributes;
+	}
+
+	public function updateGoods($id,$arr){
+		$goods = $this->findByPk($id);
+		foreach($arr as $k=>$v){
+			$goods->$k = $v;
+		}
+		return $goods->update();
+	}
+
+	public function deleteGoods($id){
+		$sql = "update think_goods set is_on=0 where id=".$id;
+		return Yii::app()->db->createCommand($sql)->execute();
+//		return $this->updateByPk($id,array('is_no'=>0));
+	}
 }
